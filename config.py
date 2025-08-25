@@ -1,0 +1,1 @@
+Adherence = Customer Demand (for April 2024) / Forecast that was loaded in March 2024 for April 2024.
