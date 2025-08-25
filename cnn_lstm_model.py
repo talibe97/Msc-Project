@@ -1,18 +1,14 @@
 # cnn_lstm_model.py
 
+import os
+os.environ.setdefault("KERAS_BACKEND", "torch")
+
 import numpy as np
-import tensorflow as tf
-from tensorflow.keras.layers import (
-    Input,
-    Conv1D,
-    BatchNormalization,
-    Dropout,
-    MaxPooling1D,
-    LSTM,
-    Dense
-)
-from tensorflow.keras.models import Model, load_model
-from tensorflow.keras.optimizers import Adam
+from keras.layers import Input, Conv1D, BatchNormalization, Dropout, MaxPooling1D, LSTM, Dense
+from keras.models import Model, load_model
+from keras.optimizers import Adam
+from keras.callbacks import EarlyStopping
+
 from pre_processing import load_preprocessed_data
 from evaluator import evaluate_model
 
@@ -86,11 +82,7 @@ def train_cnn_lstm_model(
         tf.keras.callbacks.History: training history.
     """
     callbacks = [
-        tf.keras.callbacks.EarlyStopping(
-            monitor='val_loss',
-            patience=patience,
-            restore_best_weights=True
-        )
+        EarlyStopping(monitor="val_loss", patience=patience, restore_best_weights=True)
     ]
     history = model.fit(
         X_train, y_train,

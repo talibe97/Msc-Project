@@ -1,3 +1,5 @@
+import os
+os.environ.setdefault("KERAS_BACKEND", "torch")
 from keras.models import Sequential
 from keras.layers import Conv1D, MaxPooling1D, GlobalAveragePooling1D, Dense, Dropout
 from keras.callbacks import EarlyStopping

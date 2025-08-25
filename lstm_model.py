@@ -1,6 +1,7 @@
 # functions
 
-
+import os
+os.environ.setdefault("KERAS_BACKEND", "torch")
 from keras.models import Sequential
 from keras.layers import LSTM, Dense, Dropout
 from keras.callbacks import EarlyStopping
