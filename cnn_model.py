@@ -36,7 +36,7 @@ def train_cnn_model(model, X_train, y_train, X_val, y_val,
     """
     Fits the CNN, using EarlyStopping on val_loss.
     """
-    es = EarlyStopping(monitor='val_loss', patience=4,
+    es = EarlyStopping(monitor='val_loss', patience=10,
                        restore_best_weights=True, verbose=1)
     history = model.fit(
         X_train, y_train,

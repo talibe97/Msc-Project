@@ -45,7 +45,7 @@ def train_lstm_model(model, X_train, y_train, X_val, y_val, epochs=20, batch_siz
         model: Trained Keras model
         history: Training history object
     """
-    early_stop = EarlyStopping(monitor='val_loss', patience=3, restore_best_weights=True)
+    early_stop = EarlyStopping(monitor='val_loss', patience=10, restore_best_weights=True)
 
     history = model.fit(
         X_train, y_train,

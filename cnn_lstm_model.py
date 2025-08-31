@@ -82,7 +82,7 @@ def train_cnn_lstm_model(
         tf.keras.callbacks.History: training history.
     """
     callbacks = [
-        EarlyStopping(monitor="val_loss", patience=patience, restore_best_weights=True)
+        EarlyStopping(monitor="val_loss", patience=10, restore_best_weights=True)
     ]
     history = model.fit(
         X_train, y_train,
