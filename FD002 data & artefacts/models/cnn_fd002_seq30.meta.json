@@ -1,0 +1,8 @@
+{
+  "model_type": "cnn",
+  "dataset": "FD002",
+  "seq_len": 30,
+  "features": 21,
+  "epochs": 30,
+  "batch_size": 128
+}

@@ -1,0 +1,8 @@
+{
+  "model_type": "cnn_lstm",
+  "dataset": "FD003",
+  "seq_len": 30,
+  "features": 16,
+  "epochs": 50,
+  "batch_size": 128
+}

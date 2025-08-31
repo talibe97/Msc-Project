@@ -3,6 +3,6 @@
   "dataset": "FD001",
   "seq_len": 30,
   "features": 15,
-  "epochs": 10,
-  "batch_size": 16
+  "epochs": 50,
+  "batch_size": 128
 }
